@@ -4,7 +4,37 @@
 <meta charset="UTF-8">
 <title>Mark Oliver Spengler — Composer & Sound Designer</title>
 
+<!-- Hotlink-Schutz für Bilder -->
+<meta name="referrer" content="no-referrer">
+
 <style>
+    /* --- TEXT SELECTION & COPY DISABLED --- */
+    body, html, * {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+    }
+
+    /* --- DRAG & DROP DISABLED --- */
+    img, a, div, span, p, h1, h2, h3, h4, h5, h6 {
+        -webkit-user-drag: none;
+        user-drag: none;
+        pointer-events: auto;
+    }
+
+    /* --- SCREENSHOT-ERSCHWERUNG (CSS-Overlay) --- */
+    body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        backdrop-filter: brightness(1.05) contrast(1.05);
+        mix-blend-mode: overlay;
+        opacity: 0.15;
+    }
+
     body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -62,24 +92,20 @@
         margin: 0 auto;
         text-align: center;
         position: relative;
-        top: -60px; /* näher an den Banner herangezogen */
+        top: -60px;
     }
 
     .profile {
-        width: 420px; /* größer */
+        width: 420px;
         height: auto;
         border-radius: 12px;
         object-fit: cover;
         display: block;
-        margin: -120px auto 0 auto; /* überlappt den Banner nach unten */
-        border: 2px solid #222; /* Rahmen */
-        box-shadow: 0 0 30px rgba(0,0,0,0.7); /* Schattenkante */
-        background-color: #111; /* homogener Übergang */
-        transition: none;
-    }
-
-    .profile:hover {
+        margin: -120px auto 0 auto;
+        border: 2px solid #222;
         box-shadow: 0 0 30px rgba(0,0,0,0.7);
+        background-color: #111;
+        transition: none;
     }
 
     /* --- ROLES (edle monochrome Chips) --- */
@@ -106,7 +132,6 @@
     .roles span:hover {
         background: rgba(255,255,255,0.10);
         border-color: #555;
-        box-shadow: none;
     }
 
     .icon {
@@ -263,6 +288,11 @@ Several early tracker modules are documented in the Amiga Music Preservation arc
 <footer class="fade fade-delay-4">
     © 2026 Mark Oliver Spengler — All rights reserved
 </footer>
+
+<!-- Rechtsklick deaktivieren -->
+<script>
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
 
 </body>
 </html>
