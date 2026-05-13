@@ -54,14 +54,14 @@
         display: block;
         margin: 0 auto;
         box-shadow: 0 0 25px rgba(0,0,0,0.45);
-        transition: box-shadow 0.4s ease;
+        transition: none; /* kein Glow */
     }
 
     .profile:hover {
-        box-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
+        box-shadow: none; /* Glow entfernt */
     }
 
-    /* --- ROLES --- */
+    /* --- ROLES (edle monochrome Chips) --- */
     .roles {
         text-align: center;
         margin: 30px auto 0 auto;
@@ -71,18 +71,27 @@
     }
 
     .roles span {
-        display: inline-block;
-        margin: 0 8px 8px 8px;
-        padding: 6px 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 10px 10px 10px;
+        padding: 8px 16px;
         border: 1px solid #333;
-        border-radius: 20px;
-        background: rgba(255,255,255,0.05);
-        transition: box-shadow 0.3s ease, background 0.3s ease;
+        border-radius: 24px;
+        background: rgba(255,255,255,0.04);
+        transition: background 0.3s ease, border-color 0.3s ease;
     }
 
     .roles span:hover {
-        background: rgba(255,255,255,0.12);
-        box-shadow: 0 0 12px rgba(255,255,255,0.25);
+        background: rgba(255,255,255,0.10);
+        border-color: #555;
+        box-shadow: none; /* kein Glow */
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+        fill: #bbb;
     }
 
     /* --- CONTENT --- */
@@ -161,13 +170,34 @@
     <img src="profile.jpg" class="profile">
 </div>
 
+<!-- ROLES BLOCK -->
 <div class="roles fade fade-delay-2">
-    <span>Composer</span>
-    <span>Keyboardist</span>
-    <span>Sound Designer</span>
-    <span>Producer</span>
-    <span>MIDI Performer</span>
-    <span>Mixing &amp; Mastering</span>
+
+    <span>
+        <svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v2H4zm0 7h16v2H4zm0 7h16v2H4z"/></svg>
+        Composer
+    </span>
+
+    <span>
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 3l8 4v6c0 5-4 9-8 9s-8-4-8-9V7z"/></svg>
+        Sound Designer
+    </span>
+
+    <span>
+        <svg viewBox="0 0 24 24" class="icon"><path d="M6 3h2v18H6zm10 0h2v18h-2z"/></svg>
+        Keyboardist
+    </span>
+
+    <span>
+        <svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v12H4zm0 14h16v2H4z"/></svg>
+        Producer
+    </span>
+
+    <span>
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>
+        Mastering
+    </span>
+
 </div>
 
 <div class="content fade fade-delay-3">
