@@ -54,6 +54,35 @@
         display: block;
         margin: 0 auto;
         box-shadow: 0 0 25px rgba(0,0,0,0.45);
+        transition: box-shadow 0.4s ease;
+    }
+
+    .profile:hover {
+        box-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
+    }
+
+    /* --- ROLES --- */
+    .roles {
+        text-align: center;
+        margin: 30px auto 0 auto;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        color: #ccc;
+    }
+
+    .roles span {
+        display: inline-block;
+        margin: 0 8px 8px 8px;
+        padding: 6px 14px;
+        border: 1px solid #333;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.05);
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .roles span:hover {
+        background: rgba(255,255,255,0.12);
+        box-shadow: 0 0 12px rgba(255,255,255,0.25);
     }
 
     /* --- CONTENT --- */
@@ -70,6 +99,11 @@
         margin-bottom: 25px;
         font-weight: 600;
         letter-spacing: 0.5px;
+        transition: text-shadow 0.4s ease;
+    }
+
+    h2:hover {
+        text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
     }
 
     p {
@@ -84,6 +118,7 @@
         margin: 50px auto;
         padding-bottom: 56.25%;
         height: 0;
+        transition: box-shadow 0.4s ease;
     }
 
     .video-container iframe {
@@ -94,6 +129,10 @@
         height: 100%;
     }
 
+    .video-container:hover {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+    }
+
     /* --- FOOTER --- */
     footer {
         margin-top: 60px;
@@ -102,6 +141,7 @@
         color: #777;
         text-align: center;
         border-top: 1px solid #222;
+        box-shadow: 0 -5px 20px rgba(255, 255, 255, 0.05);
     }
 
     /* --- MOBILE --- */
@@ -121,6 +161,15 @@
     <img src="profile.jpg" class="profile">
 </div>
 
+<div class="roles fade fade-delay-2">
+    <span>Composer</span>
+    <span>Keyboardist</span>
+    <span>Sound Designer</span>
+    <span>Producer</span>
+    <span>MIDI Performer</span>
+    <span>Mixing &amp; Mastering</span>
+</div>
+
 <div class="content fade fade-delay-3">
 
 <h2>About</h2>
@@ -136,7 +185,7 @@ His releases appear on all major digital platforms.
 <p>
 He was active in the Amiga demoscene during the 1990s under the handles Mindstorm / MSP,  
 and was a member of the groups Apex, Laser Dance, Scoopex and Supercarrier.  
-He contributed to the Sonic Arranger Q&A and composed several demo tracks for the release version.  
+He contributed to the Sonic Arranger Q&amp;A and composed several demo tracks for the release version.  
 Several early tracker modules are documented in the Amiga Music Preservation archive.
 </p>
 
