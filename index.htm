@@ -8,235 +8,243 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <style>
-    /* --- TEXT SELECTION & COPY DISABLED --- */
-    body, html, * {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-touch-callout: none;
-    }
+/* --- TEXT SELECTION & COPY DISABLED --- */
+body, html, * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
 
-    /* --- DRAG & DROP DISABLED --- */
-    img, a, div, span, p, h1, h2, h3, h4, h5, h6 {
-        -webkit-user-drag: none;
-        user-drag: none;
-        pointer-events: auto;
-    }
+/* --- DRAG & DROP DISABLED --- */
+img, a, div, span, p, h1, h2, h3, h4, h5, h6 {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: auto;
+}
 
-    /* --- SCREENSHOT-ERSCHWERUNG (CSS-Overlay) --- */
-    body::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        backdrop-filter: brightness(1.05) contrast(1.05);
-        mix-blend-mode: overlay;
-        opacity: 0.15;
-    }
+/* --- SCREENSHOT-ERSCHWERUNG (CSS-Overlay) --- */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    backdrop-filter: brightness(1.05) contrast(1.05);
+    mix-blend-mode: overlay;
+    opacity: 0.15;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #111;
-        color: #eee;
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #eee;
+}
 
-    /* --- LINK STYLING (THEME MATCHING) --- */
-    a {
-        color: #7ab8ff;
-        text-decoration: none;
-        border-bottom: 1px solid rgba(122,184,255,0.35);
-        transition: color 0.25s ease, border-color 0.25s ease;
-    }
+/* --- LINK STYLING (THEME MATCHING) --- */
+a {
+    color: #7ab8ff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(122,184,255,0.35);
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
 
-    a:hover {
-        color: #a7d4ff;
-        border-bottom-color: rgba(167,212,255,0.8);
-    }
+a:hover {
+    color: #a7d4ff;
+    border-bottom-color: rgba(167,212,255,0.8);
+}
 
-    a:visited {
-        color: #6aa0d8;
-    }
+a:visited {
+    color: #6aa0d8;
+}
 
-    /* --- FADE-IN ANIMATION --- */
-    @keyframes fadeInUp {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
+/* --- FADE-IN ANIMATION --- */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 
-    .fade {
-        opacity: 0;
-        animation: fadeInUp 1.0s ease-out forwards;
-    }
+.fade { opacity: 0; animation: fadeInUp 1.0s ease-out forwards; }
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.4s; }
+.fade-delay-3 { animation-delay: 0.6s; }
+.fade-delay-4 { animation-delay: 0.8s; }
 
-    .fade-delay-1 { animation-delay: 0.2s; }
-    .fade-delay-2 { animation-delay: 0.4s; }
-    .fade-delay-3 { animation-delay: 0.6s; }
-    .fade-delay-4 { animation-delay: 0.8s; }
+/* --- PARALLAX BANNER --- */
+.parallax {
+    background-image: url('banner.jpg');
+    height: 380px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-    /* --- PARALLAX BANNER --- */
-    .parallax {
-        background-image: url('banner.jpg');
-        height: 380px;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+/* --- PROFILE BLOCK --- */
+.profile-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    top: -60px;
+}
 
-    /* --- PROFILE BLOCK --- */
-    .profile-block {
-        max-width: 1000px;
-        margin: 0 auto;
-        text-align: center;
-        position: relative;
-        top: -60px;
-    }
+.profile {
+    width: 420px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+    margin: -120px auto 0 auto;
+    border: 2px solid #222;
+    box-shadow: 0 0 30px rgba(0,0,0,0.7);
+    background-color: #111;
+}
 
+/* --- ROLES --- */
+.roles {
+    text-align: center;
+    margin: 10px auto 0 auto;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: #ccc;
+}
+
+.roles span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 10px 10px 10px;
+    padding: 8px 16px;
+    border: 1px solid #333;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.04);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.roles span:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: #555;
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    fill: #bbb;
+}
+
+/* --- CONTENT --- */
+.content {
+    max-width: 900px;
+    margin: 20px auto 40px auto;
+    padding: 0 20px;
+    line-height: 1.65;
+    font-size: 19px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: text-shadow 0.4s ease;
+}
+
+h2:hover {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
+}
+
+p { margin-bottom: 22px; }
+
+/* --- SAFE VIDEO THUMBNAIL (Option C) --- */
+.video-thumb {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 50px auto;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    transition: transform 0.35s ease;
+}
+
+.video-thumb:hover {
+    transform: scale(1.02);
+}
+
+.video-thumb img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+}
+
+.video-thumb:hover img {
+    filter: brightness(1.0);
+}
+
+/* --- ANIMATED PLAY BUTTON --- */
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+    50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.55);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.play-button svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff;
+}
+
+/* Overlay nicht auf Thumbnail anwenden */
+.video-thumb::after {
+    content: none !important;
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 60px;
+    padding: 25px 0;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    border-top: 1px solid #222;
+    box-shadow: 0 -5px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* --- MOBILE --- */
+@media (max-width: 600px) {
     .profile {
-        width: 420px;
-        height: auto;
-        border-radius: 12px;
-        object-fit: cover;
-        display: block;
-        margin: -120px auto 0 auto;
-        border: 2px solid #222;
-        box-shadow: 0 0 30px rgba(0,0,0,0.7);
-        background-color: #111;
-        transition: none;
+        width: 300px;
+        margin-top: -80px;
     }
-
-    /* --- ROLES (edle monochrome Chips) --- */
-    .roles {
-        text-align: center;
-        margin: 10px auto 0 auto;
-        font-size: 18px;
-        letter-spacing: 0.5px;
-        color: #ccc;
-    }
-
-    .roles span {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin: 0 10px 10px 10px;
-        padding: 8px 16px;
-        border: 1px solid #333;
-        border-radius: 24px;
-        background: rgba(255,255,255,0.04);
-        transition: background 0.3s ease, border-color 0.3s ease;
-    }
-
-    .roles span:hover {
-        background: rgba(255,255,255,0.10);
-        border-color: #555;
-    }
-
-    .icon {
-        width: 18px;
-        height: 18px;
-        fill: #bbb;
-    }
-
-    /* --- CONTENT --- */
-    .content {
-        max-width: 900px;
-        margin: 20px auto 40px auto;
-        padding: 0 20px;
-        line-height: 1.65;
-        font-size: 19px;
-    }
-
-    h2 {
-        text-align: center;
-        margin-bottom: 25px;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        transition: text-shadow 0.4s ease;
-    }
-
-    h2:hover {
-        text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
-    }
-
-    p {
-        margin-bottom: 22px;
-    }
-
-    /* --- SAFE VIDEO THUMBNAIL (Option C) --- */
-    .video-thumb {
-        position: relative;
-        width: 100%;
-        max-width: 900px;
-        margin: 50px auto;
-        cursor: pointer;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid #333;
-        box-shadow: 0 0 25px rgba(0,0,0,0.5);
-    }
-
-    .video-thumb img {
-        width: 100%;
-        display: block;
-        filter: brightness(0.85);
-        transition: filter 0.3s ease;
-    }
-
-    .video-thumb:hover img {
-        filter: brightness(1.0);
-    }
-
-    .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 90px;
-        height: 90px;
-        background: rgba(0,0,0,0.55);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.3s ease;
-    }
-
-    .play-button:hover {
-        background: rgba(0,0,0,0.75);
-    }
-
-    .play-button svg {
-        width: 40px;
-        height: 40px;
-        fill: #fff;
-    }
-
-    /* --- FOOTER --- */
-    footer {
-        margin-top: 60px;
-        padding: 25px 0;
-        font-size: 14px;
-        color: #777;
-        text-align: center;
-        border-top: 1px solid #222;
-        box-shadow: 0 -5px 20px rgba(255, 255, 255, 0.05);
-    }
-
-    /* --- MOBILE --- */
-    @media (max-width: 600px) {
-        .profile {
-            width: 300px;
-            margin-top: -80px;
-        }
-        .profile-block {
-            top: -40px;
-        }
-        .content { font-size: 17px; }
-        .parallax { height: 260px; background-attachment: scroll; }
-    }
+    .profile-block { top: -40px; }
+    .content { font-size: 17px; }
+    .parallax { height: 260px; background-attachment: scroll; }
+}
 </style>
 
 </head>
@@ -249,32 +257,11 @@
 </div>
 
 <div class="roles fade fade-delay-2">
-
-    <span>
-        <svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v2H4zm0 7h16v2H4zm0 7h16v2H4z"/></svg>
-        Composer
-    </span>
-
-    <span>
-        <svg viewBox="0 0 24 24" class="icon"><path d="M12 3l8 4v6c0 5-4 9-8 9s-8-4-8-9V7z"/></svg>
-        Sound Designer
-    </span>
-
-    <span>
-        <svg viewBox="0 0 24 24" class="icon"><path d="M6 3h2v18H6zm10 0h2v18h-2z"/></svg>
-        Keyboardist
-    </span>
-
-    <span>
-        <svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v12H4zm0 14h16v2H4z"/></svg>
-        Producer
-    </span>
-
-    <span>
-        <svg viewBox="0 0 24 24" class="icon"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>
-        Mastering
-    </span>
-
+    <span><svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v2H4zm0 7h16v2H4zm0 7h16v2H4z"/></svg>Composer</span>
+    <span><svg viewBox="0 0 24 24" class="icon"><path d="M12 3l8 4v6c0 5-4 9-8 9s-8-4-8-9V7z"/></svg>Sound Designer</span>
+    <span><svg viewBox="0 0 24 24" class="icon"><path d="M6 3h2v18H6zm10 0h2v18h-2z"/></svg>Keyboardist</span>
+    <span><svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v12H4zm0 14h16v2H4z"/></svg>Producer</span>
+    <span><svg viewBox="0 0 24 24" class="icon"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>Mastering</span>
 </div>
 
 <div class="content fade fade-delay-3">
@@ -300,7 +287,6 @@ Several early tracker modules are documented in the Amiga Music Preservation arc
 
 <h2>Featured Video</h2>
 
-<!-- SAFE VIDEO THUMBNAIL (Option C) -->
 <a href="https://www.youtube.com/watch?v=d6ZU0nIkliQ" target="_blank" class="video-thumb fade fade-delay-4">
     <img src="thumbnail.jpg" alt="Video Thumbnail">
     <div class="play-button">
@@ -314,7 +300,6 @@ Several early tracker modules are documented in the Amiga Music Preservation arc
     © 2026 Mark Oliver Spengler — All rights reserved
 </footer>
 
-<!-- Rechtsklick deaktivieren -->
 <script>
 document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
