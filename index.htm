@@ -47,13 +47,20 @@ img { -webkit-user-drag: none; pointer-events: none; display: block; }
   box-shadow: 0 0 100px rgba(0,0,0,0.5);
 }
 
-/* ---------- Header (Link entfernt) ---------- */
+/* ---------- Header & Logo Hover ---------- */
 .header-wrap {
   padding: 40px 30px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
   border-bottom: 1px solid var(--glass-border);
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .label-logo {
@@ -61,11 +68,30 @@ img { -webkit-user-drag: none; pointer-events: none; display: block; }
   width: auto;
   border-radius: 4px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
 }
 
-/* Rein textueller Hover-Effekt ohne Link-Funktion */
-.label-info { cursor: default; }
-.label-info:hover .site-sub { color: var(--accent); transition: color 0.3s; }
+/* Hover-Text unter dem Logo */
+.logo-container::after {
+  content: "Eris Records";
+  position: absolute;
+  bottom: -22px; /* Position direkt unter dem Logo */
+  white-space: nowrap;
+  color: #fff;
+  font-size: 11px; /* Etwas kleiner */
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-5px);
+  pointer-events: none;
+}
+
+.logo-container:hover::after {
+  opacity: 0.8; /* Leicht transparent für edlen Look */
+  transform: translateY(0);
+}
 
 .site-title { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.5px; text-transform: uppercase; }
 .site-sub { margin: 2px 0 0 0; color: var(--text-muted); font-size: 14px; font-weight: 300; }
@@ -140,7 +166,7 @@ h2 {
 }
 .bio-text a:hover { background: rgba(122,184,255,0.1); border-bottom-color: var(--accent); }
 
-/* ---------- Video Section (Zentrierung & Linien-Fix) ---------- */
+/* ---------- Video Section ---------- */
 .video-frame {
   margin: 40px 0;
   border-radius: 12px;
@@ -148,24 +174,23 @@ h2 {
   border: 1px solid var(--glass-border);
   box-shadow: 0 15px 40px rgba(0,0,0,0.5);
   position: relative;
-  display: flex; /* Flex für absolute Zentrierung */
+  display: flex;
   justify-content: center;
   align-items: center;
-  background: #000; /* Verhindert helle Artefakte an den Rändern */
+  background: #000;
   transition: transform 0.3s;
   text-decoration: none;
 }
 .video-frame:hover { transform: scale(1.005); }
 
 .video-thumb-img {
-  width: 101%; /* Minimal größer um Subpixel-Lücken zu schließen */
+  width: 101%;
   aspect-ratio: 16/9;
   object-fit: cover;
 }
 
 .play-overlay {
   position: absolute;
-  /* Mathematische Mitte */
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   width: 80px; height: 80px;
@@ -190,7 +215,8 @@ footer {
 
 @media (max-width: 600px) {
   .content-body { padding: 20px 25px; }
-  .header-wrap { flex-direction: column; text-align: center; }
+  .header-wrap { flex-direction: column; text-align: center; padding-bottom: 50px; }
+  .logo-container::after { opacity: 0.6; transform: translateY(0); bottom: -18px; } /* Immer sichtbar auf Mobile */
 }
 </style>
 </head>
@@ -199,10 +225,12 @@ footer {
 <div class="main-wrapper">
   
   <header class="header-wrap">
-    <img src="label-logo.jpg" alt="Eris Records" class="label-logo">
-    <div class="label-info">
+    <div class="logo-container">
+        <img src="label-logo.jpg" alt="Logo" class="label-logo">
+    </div>
+    <div>
       <h1 class="site-title">Mark Oliver Spengler</h1>
-      <div class="site-sub">Composer & Sound Designer — Eris Records</div>
+      <div class="site-sub">Composer & Sound Designer</div>
     </div>
   </header>
 
