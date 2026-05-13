@@ -1,276 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mark Oliver Spengler — Composer & Sound Designer</title>
 
-<meta name="referrer" content="strict-origin-when-cross-origin">
-
 <style>
-/* --- TEXT SELECTION & COPY DISABLED --- */
-body, html, * {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
+:root{
+  --bg-color: #0a0a0a;
+  --text-main: #f5f5f5;
+  --text-muted: #a0a0a0;
+  --accent: #7ab8ff;
+  --glass-bg: rgba(15, 15, 15, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
-/* --- DRAG & DROP DISABLED --- */
-img, a, div, span, p, h1, h2, h3, h4, h5, h6 {
-    -webkit-user-drag: none;
-    user-drag: none;
-    pointer-events: auto;
+/* ---------- Base Setup ---------- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color) url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-main);
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
 }
 
-/* --- SCREENSHOT-SCHUTZ KOMPLETT ENTFERNT --- */
-/* (Dieser Block existiert NICHT mehr) */
+body { animation: pageFade 1.2s ease-out; }
+@keyframes pageFade { from { opacity: 0; } to { opacity: 1; } }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #111;
-    color: #eee;
+* { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+img { -webkit-user-drag: none; pointer-events: none; display: block; }
+
+/* ---------- Layout Containers ---------- */
+.main-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 1px solid var(--glass-border);
+  border-right: 1px solid var(--glass-border);
+  box-shadow: 0 0 100px rgba(0,0,0,0.5);
 }
 
-/* --- LINK STYLING --- */
-a {
-    color: #7ab8ff;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(122,184,255,0.35);
-    transition: color 0.25s ease, border-color 0.25s ease;
+/* ---------- Header (Link entfernt) ---------- */
+.header-wrap {
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--glass-border);
 }
 
-a:hover {
-    color: #a7d4ff;
-    border-bottom-color: rgba(167,212,255,0.8);
+.label-logo {
+  height: 50px;
+  width: auto;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
-a:visited {
-    color: #6aa0d8;
+/* Rein textueller Hover-Effekt ohne Link-Funktion */
+.label-info { cursor: default; }
+.label-info:hover .site-sub { color: var(--accent); transition: color 0.3s; }
+
+.site-title { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.5px; text-transform: uppercase; }
+.site-sub { margin: 2px 0 0 0; color: var(--text-muted); font-size: 14px; font-weight: 300; }
+
+/* ---------- Banner & Profile ---------- */
+.parallax-section {
+  position: relative;
+  height: 350px;
+  background: url('banner.jpg') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-/* --- FADE-IN --- */
-@keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+.profile-container {
+  text-align: center;
+  margin-top: -100px;
+  position: relative;
+  z-index: 10;
 }
 
-.fade { opacity: 0; animation: fadeInUp 1.0s ease-out forwards; }
-.fade-delay-1 { animation-delay: 0.2s; }
-.fade-delay-2 { animation-delay: 0.4s; }
-.fade-delay-3 { animation-delay: 0.6s; }
-.fade-delay-4 { animation-delay: 0.8s; }
-
-/* --- PARALLAX --- */
-.parallax {
-    background-image: url('banner.jpg');
-    height: 380px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.profile-img {
+  width: 380px;
+  max-width: 80%;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-/* --- PROFILE BLOCK --- */
-.profile-block {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    top: -60px;
+/* ---------- Badges ---------- */
+.roles-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
 }
 
-.profile {
-    width: 420px;
-    border-radius: 12px;
-    margin: -120px auto 0 auto;
-    border: 2px solid #222;
-    box-shadow: 0 0 30px rgba(0,0,0,0.7);
-    background-color: #111;
+.badge {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-border);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-/* --- ROLES --- */
-.roles {
-    text-align: center;
-    margin: 10px auto 0 auto;
-    font-size: 18px;
-    color: #ccc;
-}
+.badge svg { width: 14px; height: 14px; fill: var(--accent); }
 
-.roles span {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0 10px 10px 10px;
-    padding: 8px 16px;
-    border: 1px solid #333;
-    border-radius: 24px;
-    background: rgba(255,255,255,0.04);
-    transition: background 0.3s ease, border-color 0.3s ease;
-}
-
-.roles span:hover {
-    background: rgba(255,255,255,0.10);
-    border-color: #555;
-}
-
-.icon {
-    width: 18px;
-    height: 18px;
-    fill: #bbb;
-}
-
-/* --- CONTENT --- */
-.content {
-    max-width: 900px;
-    margin: 20px auto 40px auto;
-    padding: 0 20px;
-    line-height: 1.65;
-    font-size: 19px;
-}
+/* ---------- Content Area ---------- */
+.content-body { padding: 20px 60px 60px; }
 
 h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: text-shadow 0.4s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin: 50px 0 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 10px;
 }
 
-h2:hover {
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
+.bio-text p { margin-bottom: 24px; font-size: 18px; color: #ddd; font-weight: 300; }
+.bio-text a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(122,184,255,0.3);
+  transition: all 0.2s;
+}
+.bio-text a:hover { background: rgba(122,184,255,0.1); border-bottom-color: var(--accent); }
+
+/* ---------- Video Section (Zentrierung & Linien-Fix) ---------- */
+.video-frame {
+  margin: 40px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  position: relative;
+  display: flex; /* Flex für absolute Zentrierung */
+  justify-content: center;
+  align-items: center;
+  background: #000; /* Verhindert helle Artefakte an den Rändern */
+  transition: transform 0.3s;
+  text-decoration: none;
+}
+.video-frame:hover { transform: scale(1.005); }
+
+.video-thumb-img {
+  width: 101%; /* Minimal größer um Subpixel-Lücken zu schließen */
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
-/* --- SAFE VIDEO THUMBNAIL (Option C) --- */
-.video-thumb {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    margin: 50px auto;
-    cursor: pointer;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #333;
-    box-shadow: 0 0 25px rgba(0,0,0,0.5);
-    transition: transform 0.35s ease;
+.play-overlay {
+  position: absolute;
+  /* Mathematische Mitte */
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; height: 80px;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex; justify-content: center; align-items: center;
+  backdrop-filter: blur(5px);
+  z-index: 5;
 }
 
-.video-thumb:hover {
-    transform: scale(1.02);
-}
+.play-overlay svg { fill: white; width: 30px; margin-left: 4px; }
 
-.video-thumb img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-    filter: brightness(0.9);
-    transition: filter 0.3s ease;
-}
-
-.video-thumb:hover img {
-    filter: brightness(1.0);
-}
-
-/* --- ANIMATED PLAY BUTTON --- */
-@keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
-    50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
-}
-
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90px;
-    height: 90px;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.55);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    animation: pulse 2s infinite ease-in-out;
-}
-
-.play-button svg {
-    width: 40px;
-    height: 40px;
-    fill: #fff;
-}
-
-/* --- FOOTER --- */
+/* ---------- Footer ---------- */
 footer {
-    margin-top: 60px;
-    padding: 25px 0;
-    font-size: 14px;
-    color: #777;
-    text-align: center;
-    border-top: 1px solid #222;
-    box-shadow: 0 -5px 20px rgba(255, 255, 255, 0.05);
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 12px;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .content-body { padding: 20px 25px; }
+  .header-wrap { flex-direction: column; text-align: center; }
 }
 </style>
-
 </head>
 <body>
 
-<div class="parallax fade fade-delay-1"></div>
-
-<div class="profile-block fade fade-delay-2">
-    <img src="profile.jpg" class="profile">
-</div>
-
-<div class="roles fade fade-delay-2">
-    <span><svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v2H4zm0 7h16v2H4zm0 7h16v2H4z"/></svg>Composer</span>
-    <span><svg viewBox="0 0 24 24" class="icon"><path d="M12 3l8 4v6c0 5-4 9-8 9s-8-4-8-9V7z"/></svg>Sound Designer</span>
-    <span><svg viewBox="0 0 24 24" class="icon"><path d="M6 3h2v18H6zm10 0h2v18h-2z"/></svg>Keyboardist</span>
-    <span><svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v12H4zm0 14h16v2H4z"/></svg>Producer</span>
-    <span><svg viewBox="0 0 24 24" class="icon"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>Mastering</span>
-</div>
-
-<div class="content fade fade-delay-3">
-
-<h2>About</h2>
-
-<p>
-Mark Oliver Spengler is a composer, keyboardist and producer of electronic music.  
-Active since the 1990s, his work blends precise synthesizer programming, detailed sound design  
-and structured electronic composition. His music ranges from chiptune‑influenced pieces  
-to atmospheric soundscapes and emotionally driven studio productions.  
-His releases appear on all major digital platforms.
-</p>
-
-<p>
-He was active in the Amiga demoscene during the 1990s under the handles  
-<a href="https://janeway.exotica.org.uk/author.php?what=0&id=16612&query=&cat=&tag=&show=10&sort=Title&order=asc&page=1" target="_blank">Mindstorm / MSP</a>,  
-and was a member of the groups Apex, Laser Dance, Scoopex and Supercarrier.  
-He contributed to the <a href="https://janeway.exotica.org.uk/release.php?id=79150" target="_blank">Sonic Arranger</a> Q&amp;A  
-and composed several demo tracks for the release version.  
-Several early tracker modules are documented in the Amiga Music Preservation archive.
-</p>
-
-<h2>Featured Video</h2>
-
-<a href="https://www.youtube.com/watch?v=d6ZU0nIkliQ" target="_blank" class="video-thumb fade fade-delay-4">
-    <img src="thumbnail.jpg" alt="Video Thumbnail">
-    <div class="play-button">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+<div class="main-wrapper">
+  
+  <header class="header-wrap">
+    <img src="label-logo.jpg" alt="Eris Records" class="label-logo">
+    <div class="label-info">
+      <h1 class="site-title">Mark Oliver Spengler</h1>
+      <div class="site-sub">Composer & Sound Designer — Eris Records</div>
     </div>
-</a>
+  </header>
+
+  <div class="parallax-section"></div>
+
+  <div class="profile-container">
+    <img src="profile.jpg" alt="Mark Oliver Spengler" class="profile-img">
+  </div>
+
+  <div class="roles-row">
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>Composer</div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 5-4 9-8 9s-8-4-8-9V7l8-4z"/></svg>Sound Designer</div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M20 7h-2V5c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM8 5h8v2H8V5z"/></svg>Producer</div>
+    <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 14.5c-2.49 0-4.5-2.01-4.5-4.5S9.51 7.5 12 7.5s4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z"/></svg>Mastering</div>
+  </div>
+
+  <main class="content-body">
+    
+    <h2>About</h2>
+    <div class="bio-text">
+      <p>
+        Mark Oliver Spengler is a composer, keyboardist and producer of electronic music. 
+        Active since the 1990s, his work blends precise synthesizer programming, detailed sound design 
+        and structured electronic composition. His music ranges from chiptune‑influenced pieces 
+        to atmospheric soundscapes and emotionally driven studio productions. 
+        His releases appear on all major digital platforms.
+      </p>
+
+      <p>
+        He was active in the Amiga demoscene during the 1990s under the handles 
+        <a href="https://janeway.exotica.org.uk/author.php?what=0&id=16612" target="_blank" rel="noopener noreferrer">Mindstorm / MSP</a>, 
+        and was a member of the groups Apex, Laser Dance, Scoopex and Supercarrier. 
+        He contributed to the <a href="https://janeway.exotica.org.uk/release.php?id=79150" target="_blank" rel="noopener noreferrer">Sonic Arranger</a> Q&amp;A 
+        and composed several demo tracks for the release version. 
+        Several early tracker modules are documented in the Amiga Music Preservation archive.
+      </p>
+
+      <p>
+        His work includes album releases, commissioned pieces for media and collaborative productions. 
+        He focuses on modular synthesis, hybrid production techniques and a balance between nostalgic 
+        textures and modern clarity. Live performances combine improvisation with precise sequencing.
+      </p>
+    </div>
+
+    <h2>Featured Video</h2>
+    <a href="https://www.youtube.com/watch?v=d6ZU0nIkliQ" class="video-frame" target="_blank" rel="noopener">
+      <img src="thumbnail.jpg" alt="Video Thumbnail" class="video-thumb-img">
+      <div class="play-overlay">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+    </a>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> MARK OLIVER SPENGLER — ERIS RECORDS. ALL RIGHTS RESERVED.
+  </footer>
 
 </div>
-
-<footer class="fade fade-delay-4">
-    © 2026 Mark Oliver Spengler — All rights reserved
-</footer>
 
 <script>
-document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
