@@ -59,29 +59,33 @@
     /* --- PROFILE BLOCK --- */
     .profile-block {
         max-width: 1000px;
-        margin: 40px auto 0 auto;
+        margin: 0 auto;
         text-align: center;
+        position: relative;
+        top: -60px; /* näher an den Banner herangezogen */
     }
 
     .profile {
-        width: 360px;
+        width: 420px; /* größer */
         height: auto;
         border-radius: 12px;
         object-fit: cover;
         display: block;
-        margin: 0 auto;
-        box-shadow: 0 0 25px rgba(0,0,0,0.45);
+        margin: -120px auto 0 auto; /* überlappt den Banner nach unten */
+        border: 2px solid #222; /* Rahmen */
+        box-shadow: 0 0 30px rgba(0,0,0,0.7); /* Schattenkante */
+        background-color: #111; /* homogener Übergang */
         transition: none;
     }
 
     .profile:hover {
-        box-shadow: none;
+        box-shadow: 0 0 30px rgba(0,0,0,0.7);
     }
 
     /* --- ROLES (edle monochrome Chips) --- */
     .roles {
         text-align: center;
-        margin: 30px auto 0 auto;
+        margin: 10px auto 0 auto;
         font-size: 18px;
         letter-spacing: 0.5px;
         color: #ccc;
@@ -114,7 +118,7 @@
     /* --- CONTENT --- */
     .content {
         max-width: 900px;
-        margin: 40px auto;
+        margin: 20px auto 40px auto;
         padding: 0 20px;
         line-height: 1.65;
         font-size: 19px;
@@ -172,7 +176,13 @@
 
     /* --- MOBILE --- */
     @media (max-width: 600px) {
-        .profile { width: 260px; }
+        .profile {
+            width: 300px;
+            margin-top: -80px;
+        }
+        .profile-block {
+            top: -40px;
+        }
         .content { font-size: 17px; }
         .parallax { height: 260px; background-attachment: scroll; }
     }
@@ -187,7 +197,6 @@
     <img src="profile.jpg" class="profile">
 </div>
 
-<!-- ROLES BLOCK -->
 <div class="roles fade fade-delay-2">
 
     <span>
