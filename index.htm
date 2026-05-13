@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Mark Oliver Spengler — Composer & Sound Designer</title>
 
-<!-- Hotlink-Schutz ohne YouTube zu blockieren -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <style>
@@ -24,7 +23,7 @@ img, a, div, span, p, h1, h2, h3, h4, h5, h6 {
     pointer-events: auto;
 }
 
-/* --- SCREENSHOT-ERSCHWERUNG (CSS-Overlay) --- */
+/* --- SCREENSHOT-OVERLAY (global) --- */
 body::after {
     content: "";
     position: fixed;
@@ -33,6 +32,15 @@ body::after {
     backdrop-filter: brightness(1.05) contrast(1.05);
     mix-blend-mode: overlay;
     opacity: 0.15;
+    z-index: 1;
+}
+
+/* --- VIDEO-THUMBNAIL VOM OVERLAY ISOLIEREN --- */
+.video-thumb,
+.video-thumb * {
+    isolation: isolate;
+    position: relative;
+    z-index: 10;
 }
 
 body {
@@ -43,7 +51,7 @@ body {
     color: #eee;
 }
 
-/* --- LINK STYLING (THEME MATCHING) --- */
+/* --- LINK STYLING --- */
 a {
     color: #7ab8ff;
     text-decoration: none;
@@ -60,7 +68,7 @@ a:visited {
     color: #6aa0d8;
 }
 
-/* --- FADE-IN ANIMATION --- */
+/* --- FADE-IN --- */
 @keyframes fadeInUp {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
@@ -72,7 +80,7 @@ a:visited {
 .fade-delay-3 { animation-delay: 0.6s; }
 .fade-delay-4 { animation-delay: 0.8s; }
 
-/* --- PARALLAX BANNER --- */
+/* --- PARALLAX --- */
 .parallax {
     background-image: url('banner.jpg');
     height: 380px;
@@ -93,10 +101,7 @@ a:visited {
 
 .profile {
     width: 420px;
-    height: auto;
     border-radius: 12px;
-    object-fit: cover;
-    display: block;
     margin: -120px auto 0 auto;
     border: 2px solid #222;
     box-shadow: 0 0 30px rgba(0,0,0,0.7);
@@ -108,7 +113,6 @@ a:visited {
     text-align: center;
     margin: 10px auto 0 auto;
     font-size: 18px;
-    letter-spacing: 0.5px;
     color: #ccc;
 }
 
@@ -156,8 +160,6 @@ h2:hover {
     text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
 }
 
-p { margin-bottom: 22px; }
-
 /* --- SAFE VIDEO THUMBNAIL (Option C) --- */
 .video-thumb {
     position: relative;
@@ -178,7 +180,6 @@ p { margin-bottom: 22px; }
 
 .video-thumb img {
     width: 100%;
-    height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
@@ -219,11 +220,6 @@ p { margin-bottom: 22px; }
     fill: #fff;
 }
 
-/* Overlay nicht auf Thumbnail anwenden */
-.video-thumb::after {
-    content: none !important;
-}
-
 /* --- FOOTER --- */
 footer {
     margin-top: 60px;
@@ -233,17 +229,6 @@ footer {
     text-align: center;
     border-top: 1px solid #222;
     box-shadow: 0 -5px 20px rgba(255, 255, 255, 0.05);
-}
-
-/* --- MOBILE --- */
-@media (max-width: 600px) {
-    .profile {
-        width: 300px;
-        margin-top: -80px;
-    }
-    .profile-block { top: -40px; }
-    .content { font-size: 17px; }
-    .parallax { height: 260px; background-attachment: scroll; }
 }
 </style>
 
