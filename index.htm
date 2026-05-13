@@ -1,107 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Mark Oliver Spengler — Composer & Sound Designer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
+<meta charset="UTF-8">
+<title>Mark Oliver Spengler — Composer & Sound Designer</title>
+<style>
     body {
-      margin:0;
-      background:#05060a;
-      color:#e6e6e6;
-      font-family:system-ui, sans-serif;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #111;
+        color: #eee;
+        text-align: center;
     }
-
-    header {
-      background:url('banner.jpg') center/cover no-repeat;
-      padding:6rem 8vw 3rem;
-      text-align:center;
+    .banner {
+        width: 100%;
+        height: auto;
     }
-
-    img.portrait {
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      object-fit:cover;
-      border:3px solid rgba(255,255,255,0.15);
-      margin-bottom:1.5rem;
-      box-shadow:0 0 25px rgba(0,0,0,0.6);
+    .profile {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        margin-top: -90px;
+        border: 4px solid #111;
     }
-
-    h1 {
-      margin:0;
-      font-size:2.4rem;
-      letter-spacing:.04em;
+    .content {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        line-height: 1.6;
+        font-size: 18px;
     }
-
-    h2 {
-      margin:0.5rem 0 0;
-      font-weight:400;
-      color:#9aa0b2;
-      font-size:1rem;
-    }
-
-    main {
-      padding:2rem 8vw 4rem;
-      max-width:900px;
-      margin:auto;
-      line-height:1.6;
-    }
-
-    .btn {
-      display:inline-block;
-      margin-top:2rem;
-      padding:0.9rem 1.8rem;
-      background:#0a84ff;
-      color:white;
-      border-radius:6px;
-      text-decoration:none;
-      font-weight:600;
-      transition:background .2s;
-    }
-
-    .btn:hover {
-      background:#006be6;
-    }
-
-    footer {
-      text-align:center;
-      padding:2rem;
-      color:#666;
-      font-size:.8rem;
-    }
-  </style>
+</style>
 </head>
-
 <body>
 
-<header>
-  <img src="profile.jpg" class="portrait" alt="Mark Oliver Spengler">
-  <h1>Mark Oliver Spengler</h1>
-  <h2>Composer • Sound Designer • Electronic Music</h2>
+<img src="banner.jpg" class="banner">
+<img src="profile.jpg" class="profile">
 
-  <a class="btn" href="https://www.youtube.com/@MarkOliverSpengler" target="_blank">
-    Visit my YouTube Channel
-  </a>
-</header>
+<div class="content">
 
-<main>
-  <h3>About</h3>
-  <p>
-    Mark Oliver Spengler is a composer, keyboardist and producer of electronic music.
-    Active since the 1990s, his work blends precise synthesizer programming, detailed
-    sound design and structured electronic composition. His music ranges from
-    chiptune‑influenced pieces to atmospheric soundscapes and emotionally driven
-    studio productions. His releases appear on all major digital platforms.
-  </p>
-</main>
+<h2>About</h2>
 
-<footer>
-  © <span id="y"></span> Mark Oliver Spengler — Hosted on GitHub Pages
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</footer>
+<p>
+Mark Oliver Spengler is a composer, keyboardist and producer of electronic music.  
+Active since the 1990s, his work blends precise synthesizer programming, detailed sound design  
+and structured electronic composition. His music ranges from chiptune‑influenced pieces  
+to atmospheric soundscapes and emotionally driven studio productions.  
+His releases appear on all major digital platforms.
+</p>
+
+<p>
+He was active in the Amiga demoscene during the 1990s under the handles Mindstorm / MSP,  
+and was a member of the groups Apex, Laser Dance, Scoopex and Supercarrier.  
+He contributed to the Sonic Arranger Q&A and composed several demo tracks for the release version.  
+Several early tracker modules are documented in the Amiga Music Preservation archive.
+</p>
+
+</div>
 
 </body>
 </html>
