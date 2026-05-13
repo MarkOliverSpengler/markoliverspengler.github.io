@@ -165,27 +165,53 @@
         margin-bottom: 22px;
     }
 
-    /* --- VIDEO --- */
-    .video-container {
+    /* --- SAFE VIDEO THUMBNAIL (Option C) --- */
+    .video-thumb {
         position: relative;
         width: 100%;
         max-width: 900px;
         margin: 50px auto;
-        padding-bottom: 56.25%;
-        height: 0;
-        transition: box-shadow 0.4s ease;
+        cursor: pointer;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #333;
+        box-shadow: 0 0 25px rgba(0,0,0,0.5);
     }
 
-    .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .video-thumb img {
         width: 100%;
-        height: 100%;
+        display: block;
+        filter: brightness(0.85);
+        transition: filter 0.3s ease;
     }
 
-    .video-container:hover {
-        box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+    .video-thumb:hover img {
+        filter: brightness(1.0);
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90px;
+        height: 90px;
+        background: rgba(0,0,0,0.55);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease;
+    }
+
+    .play-button:hover {
+        background: rgba(0,0,0,0.75);
+    }
+
+    .play-button svg {
+        width: 40px;
+        height: 40px;
+        fill: #fff;
     }
 
     /* --- FOOTER --- */
@@ -274,14 +300,13 @@ Several early tracker modules are documented in the Amiga Music Preservation arc
 
 <h2>Featured Video</h2>
 
-<div class="video-container fade fade-delay-4">
-    <iframe 
-        src="https://www.youtube.com/embed/d6ZU0nIkliQ" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
-</div>
+<!-- SAFE VIDEO THUMBNAIL (Option C) -->
+<a href="https://www.youtube.com/watch?v=d6ZU0nIkliQ" target="_blank" class="video-thumb fade fade-delay-4">
+    <img src="thumbnail.jpg" alt="Video Thumbnail">
+    <div class="play-button">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+</a>
 
 </div>
 
