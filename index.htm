@@ -23,25 +23,8 @@ img, a, div, span, p, h1, h2, h3, h4, h5, h6 {
     pointer-events: auto;
 }
 
-/* --- SCREENSHOT-OVERLAY (global) --- */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    backdrop-filter: brightness(1.05) contrast(1.05);
-    mix-blend-mode: overlay;
-    opacity: 0.15;
-    z-index: 1;
-}
-
-/* --- VIDEO-THUMBNAIL VOM OVERLAY ISOLIEREN --- */
-.video-thumb,
-.video-thumb * {
-    isolation: isolate;
-    position: relative;
-    z-index: 10;
-}
+/* --- SCREENSHOT-SCHUTZ ENTFERNT --- */
+/* (dieser Block wurde vollständig gelöscht) */
 
 body {
     font-family: Arial, sans-serif;
