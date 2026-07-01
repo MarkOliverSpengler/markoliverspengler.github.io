@@ -279,13 +279,13 @@
     </div>
 
     <script>
-        // FIX: Erkennt den Google-Sprung, entfernt das Fragment und setzt den Scroll-Fokus auf den Seitenanfang
-        window.addEventListener('load', function() {
+        // Sofortige Korrektur bei Google-Fragmenten
+        (function() {
             if (window.location.hash.includes(':~:text=')) {
                 window.history.replaceState(null, null, window.location.pathname);
                 window.scrollTo(0, 0);
             }
-        });
+        })();
 
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.getElementById('year').textContent = new Date().getFullYear();
