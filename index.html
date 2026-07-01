@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -131,7 +131,6 @@
             --glass-border: rgba(255, 255, 255, 0.08);
         }
 
-        /* Prevent visual text highlighting by browser features */
         ::target-text {
             background-color: transparent !important;
             color: inherit !important;
@@ -280,26 +279,16 @@
     </div>
 
     <script>
-        // Force scroll to top to prevent Google search text fragment behavior
-        function resetScroll() {
+        // FIX: Erkennt den Google-Sprung, entfernt das Fragment und setzt den Scroll-Fokus auf den Seitenanfang
+        window.addEventListener('load', function() {
             if (window.location.hash.includes(':~:text=')) {
                 window.history.replaceState(null, null, window.location.pathname);
+                window.scrollTo(0, 0);
             }
-            window.scrollTo(0, 0);
-        }
-
-        // Apply reset on load and via pageshow to handle bfcache navigation
-        window.addEventListener('pageshow', resetScroll);
-        window.addEventListener('load', () => {
-            resetScroll();
-            setTimeout(resetScroll, 100);
         });
 
-        // Prevent context menu to deter image/text selection
         document.addEventListener('contextmenu', e => e.preventDefault());
-        
-        // Dynamically update the footer year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
-</html> -->
+</html>
