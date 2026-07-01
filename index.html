@@ -4,10 +4,12 @@
 <head>
     <meta charset="utf-8">
     <script>
-        <script>
-        if (window.location.hash.includes(':~:text=')) {
-            history.replaceState(null, null, window.location.pathname + window.location.search);
-        }
+        (function() {
+            var hash = window.location.hash;
+            if (hash && hash.includes(':~:text=')) {
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            }
+        })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="CbNsqOJV-VoTDEi9mlq6WpYJJStice5AS8QbulxBJE0" />
