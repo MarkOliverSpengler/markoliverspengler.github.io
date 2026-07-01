@@ -31,8 +31,9 @@
 
 	<script>
     if (window.location.hash.includes(':~:text=')) {
-        window.location.replace(window.location.origin + window.location.pathname);
-        window.location.reload(true);
+        // Entferne das Fragment und erzwinge einen kompletten Seiten-Reload
+        const cleanUrl = window.location.origin + window.location.pathname;
+        window.location.href = cleanUrl;
     }
 	</script>
 
