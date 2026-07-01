@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="CbNsqOJV-VoTDEi9mlq6WpYJJStice5AS8QbulxBJE0" />
 
     <title>Mark Oliver Spengler — Composer & Sound Designer</title>
@@ -121,10 +121,7 @@
         * { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
         img { -webkit-user-drag: none; pointer-events: none; display: block; }
 
-        ::target-text,
-        ::highlight(text-fragment), 
-        :target,
-        ::selection {
+        ::target-text, ::highlight(text-fragment), :target, ::selection {
             background-color: transparent !important;
             color: inherit !important;
             outline: none !important;
@@ -169,7 +166,6 @@
         .album-thumb { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
         
         .play-overlay { display: none; }
-
         footer { text-align: center; padding: 60px 20px; font-size: 12px; color: #555; letter-spacing: 1px; }
 
         @media (max-width: 600px) {
@@ -186,7 +182,10 @@
         if (window.location.hash.includes(':~:text=')) {
             history.replaceState(null, null, window.location.pathname + window.location.search);
         }
+        window.onload = () => window.scrollTo(0, 0);
+        setTimeout(() => window.scrollTo(0, 0), 100);
     </script>
+
     <div class="main-wrapper">
         <header class="header-wrap">
             <div class="logo-container">
@@ -221,7 +220,6 @@
                     to atmospheric soundscapes and emotionally driven studio productions. 
                     His releases appear on all major digital platforms.
                 </p>
-
                 <p>
                     He was a prominent figure in the Amiga demoscene during the 1990s under the pseudonym  
                     <a href="https://demozoo.org/sceners/61052/" target="_blank" rel="noopener noreferrer">Mindstorm</a>, 
@@ -229,7 +227,6 @@
                     He was deeply involved in the <a href="https://janeway.exotica.org.uk/release.php?id=37027" target="_blank" rel="noopener noreferrer">Sonic Arranger</a> Q&A 
                     and composed several <a href="assets/sonic_arranger.mp4" target="_blank">demo</a> tracks specifically for its release version.
                 </p>
-
                 <p>
                     His portfolio encompasses studio album releases, commissioned media projects, and collaborative productions. 
                     He focuses on modular synthesis, hybrid production techniques, and a meticulous balance between 
@@ -241,15 +238,11 @@
             <div class="albums-grid">
                 <a href="https://too.fm/xmppap" class="album-frame" target="_blank" rel="noopener" title="Seraphim">
                     <img src="assets/seraphim.jpg" alt="Seraphim" class="album-thumb">
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
+                    <div class="play-overlay"></div>
                 </a>
                 <a href="https://too.fm/zvzokep" class="album-frame" target="_blank" rel="noopener" title="Nexus">
                     <img src="assets/nexus.jpg" alt="Nexus" class="album-thumb">
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
+                    <div class="play-overlay"></div>
                 </a>
             </div>
         </main>
