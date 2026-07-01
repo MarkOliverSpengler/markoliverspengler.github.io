@@ -179,11 +179,9 @@
 
 <body>
     <script>
-        if (window.location.hash) {
-            window.history.replaceState(null, null, window.location.pathname + window.location.search);
+        if (window.location.hash.includes(':~:text=')) {
+            window.location.replace(window.location.pathname + window.location.search);
         }
-        window.onload = () => window.scrollTo(0, 0);
-        setTimeout(() => window.scrollTo(0, 0), 100);
     </script>
 
     <div class="main-wrapper">
