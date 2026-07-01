@@ -121,9 +121,9 @@
         * { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
         img { -webkit-user-drag: none; pointer-events: none; display: block; }
 
-        /* Disable Browser Native Text Highlights (Google Scroll-to-Text) */
         ::highlight(text-fragment), 
-        :target {
+        :target,
+        ::selection {
             background-color: transparent !important;
             color: inherit !important;
             outline: none !important;
