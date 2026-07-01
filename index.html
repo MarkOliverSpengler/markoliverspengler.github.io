@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="CbNsqOJV-VoTDEi9mlq6WpYJJStice5AS8QbulxBJE0" />
 
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Mark Oliver Spengler – Composer, Sound Designer and Producer of electronic music, owner of Eris Records. Active since the 1990s (Mindstorm), specializing in synthesizer programming and cinematic soundscapes.">
     <meta name="keywords" content="Mark Oliver Spengler, Mindstorm, Composer, Sound Designer, Producer, Eris Records, Amiga, Demoscene, Scoopex, Apex, Laser Dance">
     <meta name="author" content="Mark Oliver Spengler">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Mark Oliver Spengler — Composer & Sound Designer">
     <meta property="og:description" content="Electronic music production, sound design and synthesizer programming. Eris Records.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://markoliverspengler.github.io">
     <meta property="og:image" content="https://markoliverspengler.github.io/assets/profile.jpg">
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mark Oliver Spengler — Composer & Sound Designer">
     <meta name="twitter:image" content="https://markoliverspengler.github.io/assets/profile.jpg">
     <meta name="apple-mobile-web-app-title" content="MOS" />
 
-    <!-- Favicon & Canonical Links -->
     <link rel="canonical" href="https://markoliverspengler.github.io">
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -34,14 +30,11 @@
 
     <title>Mark Oliver Spengler — Composer & Sound Designer</title>
 
-    <!-- Scroll-to-Text Fragment (STTF) Fix -->
     <script>
-        // Prevent automatic STTF jumping as much as possible on the client side
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
         
-        // Instantly clear the address bar of Scroll-to-Text Fragments (#:~:text=)
         history.replaceState(null, '', window.location.pathname + window.location.search);
 
         window.addEventListener('DOMContentLoaded', function() {
@@ -50,14 +43,12 @@
         
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
-            // A minimal delay catches late browser corrections
             setTimeout(function() { 
                 window.scrollTo(0, 0); 
             }, 50);
         });
     </script>
 
-    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -157,9 +148,7 @@
     }
     </script>
 
-    <!-- Stylesheets -->
     <style>
-        /* Base Variables */
         :root {
             --bg-color: #0a0a0a;
             --text-main: #f5f5f5;
@@ -170,7 +159,6 @@
             --glass-border: rgba(255, 255, 255, 0.08);
         }
 
-        /* Reset & Base Styles */
         html, body {
             height: 100%;
             margin: 0;
@@ -183,7 +171,6 @@
             line-height: 1.6;
         }
 
-        /* Animations */
         body {
             animation: pageFade 1.2s ease-out;
         }
@@ -193,7 +180,6 @@
             to { opacity: 1; } 
         }
 
-        /* Global Selectors */
         * {
             -webkit-user-select: none;
             user-select: none;
@@ -206,13 +192,11 @@
             display: block;
         }
 
-        /* Hide Scroll-to-Text Fragment Highlights (Google Highlight Fix) */
         ::target-text {
             background-color: transparent !important;
             color: inherit !important;
         }
 
-        /* Layout Structure */
         .main-wrapper {
             max-width: 900px;
             margin: 0 auto;
@@ -224,7 +208,6 @@
             border-right: 1px solid var(--glass-border);
         }
 
-        /* Header Section */
         .header-wrap {
             padding: 40px 30px;
             display: flex;
@@ -282,7 +265,6 @@
             font-weight: 300;
         }
 
-        /* Parallax & Profile */
         .parallax-section {
             position: relative;
             height: 350px;
@@ -306,7 +288,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
-        /* Role Badges */
         .roles-row {
             display: flex;
             justify-content: center;
@@ -333,7 +314,6 @@
             fill: var(--accent);
         }
 
-        /* Main Content Typography & Spacing */
         .content-body {
             padding: 20px 60px 0px;
             display: flex;
@@ -372,7 +352,6 @@
             background: rgba(255, 255, 255, 0.03);
         }
 
-        /* Album Grid */
         .albums-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -407,7 +386,6 @@
             display: none;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 60px 20px;
@@ -416,7 +394,6 @@
             letter-spacing: 1px;
         }
 
-        /* Responsive Design / Mobile Adjustments */
         @media (max-width: 600px) {
             .content-body {
                 padding: 20px 25px;
@@ -437,8 +414,6 @@
 
 <body>
     <div class="main-wrapper">
-        
-        <!-- Header & Identity -->
         <header class="header-wrap">
             <div class="logo-container">
                 <img src="assets/label-logo.jpg" alt="Eris Records Logo" class="label-logo">
@@ -449,15 +424,12 @@
             </div>
         </header>
 
-        <!-- Hero/Parallax Section -->
         <div class="parallax-section"></div>
 
-        <!-- Profile Picture -->
         <div class="profile-container">
             <img src="assets/profile.jpg" alt="Portrait Mark Oliver Spengler" class="profile-img">
         </div>
 
-        <!-- Professional Roles -->
         <div class="roles-row">
             <div class="badge">
                 <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
@@ -477,10 +449,7 @@
             </div>
         </div>
 
-        <!-- Main Content Area -->
         <main class="content-body">
-            
-            <!-- Biography Section -->
             <h2>About</h2>
             <div class="bio-text">
                 <p>
@@ -506,7 +475,6 @@
                 </p>
             </div>
 
-            <!-- Discography / Albums Section -->
             <h2>Featured Albums</h2>
             <div class="albums-grid">
                 <a href="https://too.fm/xmppap" class="album-frame" target="_blank" rel="noopener" title="Seraphim">
@@ -522,21 +490,15 @@
                     </div>
                 </a>
             </div>
-
         </main>
 
-        <!-- Footer -->
         <footer>
             © <span id="year"></span> MARK OLIVER SPENGLER — ERIS RECORDS. ALL RIGHTS RESERVED.
         </footer>
     </div>
 
-    <!-- Utility Scripts -->
     <script>
-        // Disable right-click context menu to prevent casual image downloading
         document.addEventListener('contextmenu', e => e.preventDefault());
-        
-        // Automatically update footer copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
