@@ -30,6 +30,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
+    <script>
+        (function() {
+            if (window.location.hash && window.location.hash.includes(':~:text=')) {
+                window.history.replaceState(null, null, window.location.pathname);
+            }
+        })();
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -256,11 +264,6 @@
     <script>
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.getElementById('year').textContent = new Date().getFullYear();
-		window.addEventListener('DOMContentLoaded', () => {
-            if (window.location.hash.includes(':~:text=')) {
-                window.history.replaceState(null, null, window.location.pathname);
-            }
-        });
     </script>
 </body>
 </html>
