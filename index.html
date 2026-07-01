@@ -184,7 +184,7 @@
 <body>
     <script>
         if (window.location.hash.includes(':~:text=')) {
-            window.location.replace(window.location.pathname);
+            history.replaceState(null, null, window.location.pathname + window.location.search);
         }
     </script>
     <div class="main-wrapper">
