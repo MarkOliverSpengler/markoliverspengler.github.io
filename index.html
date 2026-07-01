@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="google-site-verification" content="CbNsqOJV-VoTDEi9mlq6WpYJJStice5AS8QbulxBJE0" />
 
-	<script>
-	if (window.location.hash.includes(':~:text=')) {
-		window.location.hash = '';
-		window.scrollTo(0, 0);
-	}
-	</script>
+    <script>
+        // Verhindert den automatischen STTF-Sprung so gut wie clientseitig möglich
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+        });
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
+            // Ein minimaler Delay fängt späte Browser-Korrekturen ab
+            setTimeout(function() { window.scrollTo(0, 0); }, 50);
+        });
+    </script>
 
     <meta name="description" content="Mark Oliver Spengler – Composer, Sound Designer and Producer of electronic music, owner of Eris Records. Active since the 1990s (Mindstorm), specializing in synthesizer programming and cinematic soundscapes.">
     <meta name="keywords" content="Mark Oliver Spengler, Mindstorm, Composer, Sound Designer, Producer, Eris Records, Amiga, Demoscene, Scoopex, Apex, Laser Dance">
@@ -27,16 +35,16 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mark Oliver Spengler — Composer & Sound Designer">
     <meta name="twitter:image" content="https://markoliverspengler.github.io/assets/profile.jpg">
-	<meta name="apple-mobile-web-app-title" content="MOS" />
+    <meta name="apple-mobile-web-app-title" content="MOS" />
     
-	<link rel="canonical" href="https://markoliverspengler.github.io">
-	<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-	<link rel="shortcut icon" href="/favicon/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-	<link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="canonical" href="https://markoliverspengler.github.io">
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
     
-	<script type="application/ld+json">
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -155,6 +163,12 @@
 
         * { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
         img { -webkit-user-drag: none; pointer-events: none; display: block; }
+
+        /* Scroll-to-Text Fragment (Google Highlight) unsichtbar machen */
+        ::target-text {
+            background-color: transparent !important;
+            color: inherit !important;
+        }
 
         .main-wrapper {
             max-width: 900px;
