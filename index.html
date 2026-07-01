@@ -30,11 +30,10 @@
     <link rel="manifest" href="/favicon/site.webmanifest">
 
     <script>
-        // Erzwingt einen Neuladevorgang ohne das Google-Fragment
-        if (window.location.hash.includes(':~:text=')) {
-            window.location.replace(window.location.origin + window.location.pathname);
-        }
-    </script>
+    if (window.location.hash.includes(':~:text=')) {
+        window.location.href = window.location.origin + window.location.pathname;
+    }
+	</script>
 
     <script type="application/ld+json">
     {
