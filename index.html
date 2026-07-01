@@ -30,14 +30,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
-    <script>
-        (function() {
-            if (window.location.hash && window.location.hash.includes(':~:text=')) {
-                window.history.replaceState(null, null, window.location.pathname);
-            }
-        })();
-    </script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -190,6 +182,11 @@
 </head>
 
 <body>
+    <script>
+        if (window.location.hash.includes(':~:text=')) {
+            window.history.replaceState(null, null, window.location.pathname);
+        }
+    </script>
     <div class="main-wrapper">
         <header class="header-wrap">
             <div class="logo-container">
