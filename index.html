@@ -131,6 +131,9 @@
             --glass-border: rgba(255, 255, 255, 0.08);
         }
 
+        /* Verhindert Flackern beim Laden */
+        html { visibility: hidden; }
+
         ::target-text {
             background-color: transparent !important;
             color: inherit !important;
@@ -252,7 +255,7 @@
                 <p>
                     His portfolio encompasses studio album releases, commissioned media projects, and collaborative productions. 
                     He focuses on modular synthesis, hybrid production techniques, and a meticulous balance between 
-                    nostalgic textures and modern clarity.
+                    nostallic textures and modern clarity.
                 </p>
             </div>
 
@@ -279,12 +282,15 @@
     </div>
 
     <script>
-        // Sofortige Korrektur bei Google-Fragmenten
         (function() {
+            // Sofortige Korrektur
             if (window.location.hash.includes(':~:text=')) {
                 window.history.replaceState(null, null, window.location.pathname);
-                window.scrollTo(0, 0);
             }
+            window.scrollTo(0, 0);
+            
+            // Erst jetzt sichtbar machen
+            document.documentElement.style.visibility = 'visible';
         })();
 
         document.addEventListener('contextmenu', e => e.preventDefault());
