@@ -29,9 +29,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
 
-    <script>
+	<script>
     if (window.location.hash.includes(':~:text=')) {
-        window.location.href = window.location.origin + window.location.pathname;
+        window.location.replace(window.location.origin + window.location.pathname);
+        window.location.reload(true);
     }
 	</script>
 
