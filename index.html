@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -130,7 +131,7 @@
             --glass-border: rgba(255, 255, 255, 0.08);
         }
 
-        /* FIX: Deaktiviert die optische Text-Hervorhebung durch Google */
+        /* Verhindert optische Text-Hervorhebung durch Browser-Features */
         ::target-text {
             background-color: transparent !important;
             color: inherit !important;
@@ -279,7 +280,7 @@
     </div>
 
     <script>
-        // FIX: Entfernt Google Scroll-To-Text und setzt die Seite nach oben
+        // FIX: Erkennt den Google-Sprung, entfernt das Fragment und setzt den Scroll-Fokus auf den Seitenanfang
         window.addEventListener('load', function() {
             if (window.location.hash.includes(':~:text=')) {
                 window.history.replaceState(null, null, window.location.pathname);
