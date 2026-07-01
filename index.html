@@ -256,6 +256,11 @@
     <script>
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.getElementById('year').textContent = new Date().getFullYear();
+		window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash.includes(':~:text=')) {
+                window.history.replaceState(null, null, window.location.pathname);
+            }
+        });
     </script>
 </body>
 </html>
