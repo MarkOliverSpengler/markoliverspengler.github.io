@@ -11,6 +11,10 @@
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
+        
+        // Bereinigt die Adresszeile sofort von Scroll-to-Text-Fragmenten (#:~:text=)
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+
         window.addEventListener('DOMContentLoaded', function() {
             window.scrollTo(0, 0);
         });
