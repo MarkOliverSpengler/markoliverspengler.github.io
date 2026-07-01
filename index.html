@@ -3,6 +3,11 @@
 
 <head>
     <meta charset="utf-8">
+    <script>
+        if (window.location.hash.includes(':~:text=')) {
+            window.location.href = window.location.origin + window.location.pathname;
+        }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="CbNsqOJV-VoTDEi9mlq6WpYJJStice5AS8QbulxBJE0" />
 
@@ -179,9 +184,6 @@
 
 <body>
     <script>
-        if (window.location.hash.includes(':~:text=')) {
-            window.location.replace(window.location.pathname + window.location.search);
-        }
         window.onload = () => window.scrollTo(0, 0);
         setTimeout(() => window.scrollTo(0, 0), 100);
     </script>
